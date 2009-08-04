@@ -1,6 +1,6 @@
 # Bubbel
 
-Bubbel make it possible to extend java objects with a syntax similar to the prototype method in javascript.
+Bubbel make it possible to extend ruby objects with a syntax similar to the prototype method in javascript.
 
 ## Example
 
