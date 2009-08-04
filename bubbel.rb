@@ -1,8 +1,7 @@
-class Class  
+module Bubbel
   def prototype
     Prototype.new self
   end
-private
   class Prototype
     def initialize(klass)
       @klass = klass
@@ -12,4 +11,8 @@ private
       @klass.send(:define_method, name, &blk)
     end
   end
+end
+
+class Class
+  include Bubbel
 end
