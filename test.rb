@@ -6,7 +6,7 @@ end
 
 class BubbelTest < Test::Unit::TestCase
   def test_fibonacci
-    Integer.prototype.fibonacci do
+    Numericc.prototype.fibonacci do
       return 0 if self == 0
       return 1 if self == 1
       return (self-1).fibonacci + (self-2).fibonacci if self > 1
@@ -24,10 +24,13 @@ class BubbelTest < Test::Unit::TestCase
     end
     a = A.new
     assert_equal("hello world!", a.foo("hello world!"))
-    assert_nil(a.foo)
   end
   
-  def test_method_with_exceptions
+  def test_with_exceptions
+    A.prototype.foo do |bar|
+      bar
+    end
+    a = A.new
+    assert_raise(ArgumentError) {a.foo}
   end
-    
 end
