@@ -1,15 +1,14 @@
 module Bubbel
   def prototype
-    Prototype.new self
-  end
-  class Prototype
-    def initialize(klass)
-      @klass = klass
-    end
-    
-    def method_missing name, &blk
-      @klass.send(:define_method, name, &blk)
-    end
+    Class.new do
+      def initialize(klass)
+        @klass = klass
+      end
+
+      def method_missing name, &blk
+        @klass.send(:define_method, name, &blk)
+      end
+    end.new self
   end
 end
 
