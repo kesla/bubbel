@@ -6,7 +6,7 @@ end
 
 class BubbelTest < Test::Unit::TestCase
   def test_fibonacci
-    Numericc.prototype.fibonacci do
+    Numeric.prototype.fibonacci do
       return 0 if self == 0
       return 1 if self == 1
       return (self-1).fibonacci + (self-2).fibonacci if self > 1
